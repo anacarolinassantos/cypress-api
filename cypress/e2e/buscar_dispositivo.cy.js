@@ -1,4 +1,3 @@
-/// <reference types="cypress"/>
 describe("Buscar Dispositivo", () => {
   it("Buscar Dispositivo especifico", () => {
     cy.buscarDispositivoEspecifico("12").then((response) => {
