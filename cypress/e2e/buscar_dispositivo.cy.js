@@ -10,10 +10,11 @@ describe("Buscar Dispositivo", () => {
   it("Buscar Todos Dispositivo", () => {
     cy.request({
       method: "GET",
-      url: "/objects/",
+      url: `/objects`,
+      failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eql(200);
-      expect(response.body).to.have.length(13);
+      expect(response.body).to.be.an("array").and.to.have.length(13);
 
       response.body.array.forEach((element) => {
         expect(element.id).to.not.be.empty;
