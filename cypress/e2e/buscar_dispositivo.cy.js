@@ -1,3 +1,4 @@
+/// <reference types="cypress"/>
 describe("Buscar Dispositivo", () => {
   it("Buscar Dispositivo especifico", () => {
     cy.buscarDispositivoEspecifico("12").then((response) => {
@@ -14,11 +15,10 @@ describe("Buscar Dispositivo", () => {
     }).then((response) => {
       expect(response.status).to.eql(200);
       expect(response.body).to.be.an("array").and.to.have.length(13);
-
       response.body.array.forEach((element) => {
         expect(element.id).to.not.be.empty;
         expect(element.name).to.not.be.empty;
-        expect(element).have.property("data");
+        expect(element).to.have.property("data");
       });
     });
   });
