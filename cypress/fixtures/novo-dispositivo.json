@@ -1,0 +1,9 @@
+{
+  "name": "PC ANA",
+  "data": {
+      "year": 2010,
+      "price": 3000,
+      "CPU model": "Intel Core i5",
+      "Hard disk size": "1 TB"
+  }
+}
